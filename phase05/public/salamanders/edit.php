@@ -12,9 +12,9 @@ $currentPage = 'salamanders';
 if(is_post_request()) {
   $salamander = [];
   $salamander['id'] = $id;
-  $salamander['name'] = $_POST['name'] ?? '';
-  $salamander['habitat'] = $_POST['habitat'] ?? '';
-  $salamander['description'] = $_POST['description'] ?? '';
+  $salamander['name'] = mysqli_real_escape_string($db, $_POST['name']) ?? '';
+  $salamander['habitat'] = mysqli_real_escape_string($db, $_POST['habitat']) ?? '';
+  $salamander['description'] = mysqli_real_escape_string($db, $_POST['description']) ?? '';
 
   $result = update_salamander($salamander);
   if($result === true) { 
