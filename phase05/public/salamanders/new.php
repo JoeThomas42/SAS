@@ -19,7 +19,8 @@ if(is_post_request()) {
     $errors = $result;
     }
   }
-    
+  
+
 include(SHARED_PATH . '/salamander-header.php');
 ?>
 
@@ -31,13 +32,13 @@ include(SHARED_PATH . '/salamander-header.php');
 
   <form action="<?= url_for('salamanders/new.php'); ?>" method="post">
     <label for="name">Name</label>
-    <input type="text" id="name" name="name">
+    <input type="text" id="name" name="name" value="<?= isset($salamander['name']) ? $salamander['name'] : ''?>">
 
     <label for="habitat">Habitat</label>
-    <textarea name="habitat" id="habitat" cols="30" rows="10"></textarea>
+    <textarea name="habitat" id="habitat" cols="30" rows="10"><?= isset($salamander['habitat']) ? $salamander['habitat'] : ''?></textarea>
 
     <label for="description">Description</label>
-    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+    <textarea name="description" id="description" cols="30" rows="10"><?= isset($salamander['description']) ? $salamander['description'] : ''?></textarea>
 
     <input type="submit" value="Create Salamander">
   </form>
