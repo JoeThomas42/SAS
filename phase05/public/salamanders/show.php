@@ -18,7 +18,7 @@ include_once(SHARED_PATH . '/salamander-header.php');
   <h2>Salamander Details</h2>
   <a class="back-link" href="<?= url_for('salamanders/index.php'); ?>">&#8592; Back to List</a>
 
-  <h1>Salamander: <?php echo h($salamander['name']); ?></h1>
+  <h1><?php echo h($salamander['name']); ?></h1>
 
   <table>
     <tr>
